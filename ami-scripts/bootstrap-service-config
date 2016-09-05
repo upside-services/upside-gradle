@@ -1,0 +1,6 @@
+#!/bin/sh
+mkdir -p /etc/upside/service/ &&\
+aws s3 cp --recursive s3://service-config.upside.services/service/configuration/ /etc/upside/service/ &&\
+chown -R upsideservice:upsideservice /etc/upside &&\
+chown -R upsideservice:upsideservice /opt/upside
+
