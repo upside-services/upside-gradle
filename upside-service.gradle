@@ -14,7 +14,7 @@ allprojects {
 
 configure(subprojects.findAll {it.name.endsWith('-api')}) {
     ext {
-        dropwizardVersion = "1.0.0"
+        dropwizardVersion = "0.9.2"
     }
     dependencies {
         compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
@@ -24,7 +24,7 @@ configure(subprojects.findAll {it.name.endsWith('-api')}) {
 configure(subprojects.findAll {it.name.endsWith('-server')}) {
     def upsideServiceUser = 'upsideservice'
     ext {
-        dropwizardVersion = "1.0.0"
+        dropwizardVersion = "0.9.2"
     }
     dependencies {
         compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
