@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.netflix.nebula:gradle-ospackage-plugin:4.0.0'
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply from: 'https://raw.githubusercontent.com/upside-services/upside-gradle/master/upside-core.gradle'
+}
+
+configure(subprojects.findAll {it.name.endsWith('-api')}) {
+    ext {
+        dropwizardVersion = "1.0.0"
+    }
+    dependencies {
+        compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
+    }
+}
+
+configure(subprojects.findAll {it.name.endsWith('-server')}) {
+    def upsideServiceUser = 'upsideservice'
+    ext {
+        dropwizardVersion = "1.0.0"
+    }
+    dependencies {
+        compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
+    }
+    apply plugin: 'application'
+    apply plugin: com.netflix.gradle.plugins.application.OspackageApplicationDaemonPlugin
+    ospackage {
+        os = 'LINUX' // only applied to RPM
+        user = upsideServiceUser
+        group = upsideServiceUser
+        //RPM versions don't allow - or ~ so we replace with .
+        version = project.version.toString().replace('~', '.').replace('-', '.')
+        preInstall file('scripts/service-install.sh')
+        arch = 'x86_64'
+    }
+    println "Daemon command line: $name $version"
+    applicationdaemon {
+        user = upsideServiceUser
+        command = "/opt/upside/bin/start-upside-service $project.name $project.version"
+        autoStart = true
+    }
+    dependencies {
+        compile project(":${rootProject.name}-api")
+        compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+        compile group: 'com.upside.upside-dropwizard', name: 'upside-dropwizard', version: '0.2.0-SNAPSHOT'
+    }
+    run {
+        args 'server', "$projectDir/src/main/resources/app_config.yml"
+    }
+}
+
