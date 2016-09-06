@@ -49,7 +49,6 @@ configure(subprojects.findAll {it.name.endsWith('-server')}) {
     dependencies {
         compile project(":${rootProject.name}-api")
         compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
-        compile group: 'com.upside.upside-dropwizard', name: 'upside-dropwizard', version: '0.2.0-SNAPSHOT'
     }
     run {
         args 'server', "$projectDir/src/main/resources/app_config.yml"
