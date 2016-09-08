@@ -40,7 +40,7 @@ publishing {
             if(project.version.toString().contains('SNAPSHOT')) {
                 url 'https://upside.artifactoryonline.com/upside/libs-snapshot-local/'
             } else {
-                url 'https://upside.artifactoryonline.com/upside/libs-snapshot-release/'
+                url 'https://upside.artifactoryonline.com/upside/libs-release-local/'
             }
         }
     }
