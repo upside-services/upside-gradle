@@ -37,7 +37,11 @@ publishing {
                 username = maven_user
                 password = maven_user_api_key
             }
-            url 'https://upside.artifactoryonline.com/upside/libs-snapshot-local/'
+            if(project.version.toString().contains('SNAPSHOT')) {
+                url 'https://upside.artifactoryonline.com/upside/libs-snapshot-local/'
+            } else {
+                url 'https://upside.artifactoryonline.com/upside/libs-snapshot-release/'
+            }
         }
     }
 }
