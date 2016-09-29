@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pushd .
+git clone clone git@github.com:upside-services/$1.git
+cd $1
+git checkout $2
+./gradlew clean buildRpm -Prelease.useLastTag=true &&\
+sudo aminate -B  ami-a9a8dfbe *-server/build/distributions/*.rpm --vm-type hvm --partition 1
+popd

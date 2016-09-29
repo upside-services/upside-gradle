@@ -1,6 +1,12 @@
 #!/bin/sh
-# Contains at least UPSIDE_TIER
-source /etc/upside/service/base
+
+base_file=/etc/upside/service/base
+while [ ! -e "$base_file" ]
+do
+    inotifywait -qqt 2 -e create -e moved_to /etc/upside/service/
+done
+source $base_file
+
 service_name=$1
 service_version=$2
 service_base_path=/etc/upside/service/$service_name/$UPSIDE_TIER/$service_version
