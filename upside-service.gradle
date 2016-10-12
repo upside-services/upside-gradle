@@ -8,23 +8,21 @@ buildscript {
 }
 
 allprojects {
-    apply plugin: 'java'
-    apply from: 'https://raw.githubusercontent.com/upside-services/upside-gradle/master/upside-core.gradle'
-}
-
-configure(subprojects.findAll {it.name.endsWith('-api')}) {
     ext {
         dropwizardVersion = "0.9.2"
     }
+    apply plugin: 'java'
+}
+
+apply from: 'https://raw.githubusercontent.com/upside-services/upside-gradle/master/upside-core.gradle'
+
+configure(subprojects.findAll {it.name.endsWith('-api')}) {
     dependencies {
         compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
     }
 }
 
 configure(subprojects.findAll {it.name.endsWith('-client')}) {
-    ext {
-        dropwizardVersion = "0.9.2"
-    }
     dependencies {
         compile project(":${rootProject.name}-api")
         compile group: 'io.dropwizard', name: 'dropwizard-client', version: dropwizardVersion
@@ -35,9 +33,6 @@ configure(subprojects.findAll {it.name.endsWith('-client')}) {
 
 configure(subprojects.findAll {it.name.endsWith('-server')}) {
     def upsideServiceUser = 'upsideservice'
-    ext {
-        dropwizardVersion = "0.9.2"
-    }
     dependencies {
         compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
     }

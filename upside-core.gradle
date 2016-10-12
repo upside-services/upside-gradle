@@ -9,37 +9,49 @@ buildscript {
 apply plugin: nebula.plugin.release.ReleasePlugin
 apply plugin: nebula.plugin.publishing.maven.MavenPublishPlugin
 
-def maven_user = System.getenv('UPSIDE_MAVEN_USER')
-def maven_user_api_key = System.getenv('UPSIDE_MAVEN_API_KEY')
+allprojects {
+    def maven_user = System.getenv('UPSIDE_MAVEN_USER')
+    def maven_user_api_key = System.getenv('UPSIDE_MAVEN_API_KEY')
 
-repositories {
-    maven {
-        credentials {
-            username = maven_user
-            password = maven_user_api_key
-        }
-        url 'https://upside.artifactoryonline.com/upside/libs-snapshot/'
+    if (maven_user == null) {
+        print("UPSIDE_MAVEN_USER is null")
     }
-    maven {
-        credentials {
-            username = maven_user
-            password = maven_user_api_key
-        }
-        url 'https://upside.artifactoryonline.com/upside/libs-release/'
-    }
-}
-publishing {
+
+    apply plugin: nebula.plugin.publishing.publications.JavadocJarPlugin
+    apply plugin: nebula.plugin.publishing.publications.SourceJarPlugin
+
     repositories {
         maven {
             credentials {
                 username = maven_user
                 password = maven_user_api_key
             }
-            if(project.version.toString().contains('SNAPSHOT')) {
-                url 'https://upside.artifactoryonline.com/upside/libs-snapshot-local/'
-            } else {
-                url 'https://upside.artifactoryonline.com/upside/libs-release-local/'
+            url 'https://upside.artifactoryonline.com/upside/libs-snapshot/'
+        }
+        maven {
+            credentials {
+                username = maven_user
+                password = maven_user_api_key
+            }
+            url 'https://upside.artifactoryonline.com/upside/libs-release/'
+        }
+        mavenLocal()
+    }
+
+    publishing {
+        repositories {
+            maven {
+                credentials {
+                    username = maven_user
+                    password = maven_user_api_key
+                }
+                if(project.version.toString().contains('SNAPSHOT')) {
+                    url 'https://upside.artifactoryonline.com/upside/libs-snapshot-local/'
+                } else {
+                    url 'https://upside.artifactoryonline.com/upside/libs-release-local/'
+                }
             }
         }
     }
 }
+
