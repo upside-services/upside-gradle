@@ -6,8 +6,6 @@ buildscript {
     }
 }
 
-apply plugin: nebula.plugin.release.ReleasePlugin
-apply plugin: nebula.plugin.publishing.maven.MavenPublishPlugin
 
 allprojects {
     def maven_user = System.getenv('UPSIDE_MAVEN_USER')
@@ -19,6 +17,8 @@ allprojects {
 
     apply plugin: nebula.plugin.publishing.publications.JavadocJarPlugin
     apply plugin: nebula.plugin.publishing.publications.SourceJarPlugin
+    apply plugin: nebula.plugin.release.ReleasePlugin
+    apply plugin: nebula.plugin.publishing.maven.MavenPublishPlugin
 
     repositories {
         maven {
