@@ -14,8 +14,8 @@ allprojects {
         dependencies {
             /*Upside*/
             dependency 'com.upside.libs:lib-sns:0.0.3'
-            dependency 'com.upside.libs:lib-rest:0.0.2-SNAPSHOT'
-            dependency 'com.upside.model:model-jdbi:0.0.1-SNAPSHOT'
+            dependency 'com.upside.libs:lib-rest:0.0.2'
+            dependency 'com.upside.model:model-jdbi:0.0.1'
 
 
             /*Dropwizard*/
