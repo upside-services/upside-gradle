@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        jcenter() // or mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
@@ -28,15 +28,22 @@ allprojects {
             }
 
             /*Dropwizard*/
-            dependency 'io.dropwizard.metrics:metrics-annotation:3.1.2'
+            dependencySet( group: 'io.dropwizard.metrics', version:'3.1.2') {
+                entry('metrics-healthchecks')
+                entry('metrics-core')
+            }
             dependencySet(group:'io.dropwizard', version: '0.9.2') {
                 entry('dropwizard-jdbi')
                 entry('dropwizard-core')
                 entry('dropwizard-client')
                 entry('dropwizard-testing')
                 entry('dropwizard-logging')
+                entry('dropwizard-configuration')
                 entry('dropwizard-auth')
             }
+
+            dependency 'javax.validation:validation-api:1.1.0.Final'
+            dependency 'javax.inject:javax.inject:1'
 
             dependencySet(group: 'io.dropwizard.modules', version: '0.9.0-1') {
                 entry('dropwizard-java8')
@@ -87,6 +94,9 @@ allprojects {
 
             dependency 'com.google.guava:guava:20.0'
 
+            /*DI*/
+            dependency 'com.google.inject:guice:4.0'
+
             /*SLFJ*/
             dependency 'org.slf4j:slf4j-api:1.7.13'
 
@@ -98,6 +108,8 @@ allprojects {
             /*MySQL*/
             dependency 'mysql:mysql-connector-java:5.1.38'
             dependency 'org.flywaydb:flyway-core:3.2.1'
+            dependency 'org.jdbi:jdbi:2.63.1'
+ 
 
             /*Test libs*/
             dependency 'junit:junit:4.12'
