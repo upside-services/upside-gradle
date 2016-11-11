@@ -13,10 +13,14 @@ allprojects {
     dependencyManagement {
         dependencies {
             /*Upside*/
-            dependency 'com.upside.libs:lib-sns:0.0.3'
+            dependencySet( group: 'com.upside.libs', version: '0.0.3') {
+                entry('lib-test')
+                entry('lib-s3')
+                entry('lib-sns')
+                entry('lib-elasticache')
+            }
             dependency 'com.upside.libs:lib-rest:0.0.2'
             dependency 'com.upside.model:model-jdbi:0.0.1'
-
 
             /*Dropwizard*/
             dependency 'io.dropwizard.metrics:metrics-annotation:3.1.2'
@@ -39,6 +43,7 @@ allprojects {
             dependencySet(group: 'com.fasterxml.jackson.core', version: '2.6.4') {
                 entry('jackson-databind')
                 entry('jackson-annotations')
+                entry('jackson-datatype-guava')
             }
 
             dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.6.4') {
@@ -76,6 +81,7 @@ allprojects {
             /*Currency*/
             dependency 'javax.money:money-api:1.0'
             dependency 'org.javamoney:moneta:1.0'
+            dependency 'org.zalando:jackson-datatype-money:0.6.0'
 
             /*MySQL*/
             dependency 'mysql:mysql-connector-java:5.1.38'
