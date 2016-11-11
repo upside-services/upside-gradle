@@ -55,7 +55,7 @@ allprojects {
             }
 
             dependency 'com.washingtonpost.dropwizard:dropwizard-peer-authenticator:2.1.0'
-            dependency 'com.washingtonpost.dropwizard:dropwizard-json-exceptions:1.1.0'
+            dependency 'com.washingtonpost.dropwizard:dropwizard-json-exceptions:1.1.2'
 
             dependencySet(group: 'com.fasterxml.jackson.core', version: '2.6.4') {
                 entry('jackson-databind')
