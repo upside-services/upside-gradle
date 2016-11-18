@@ -3,7 +3,16 @@
 pushd .
 git clone clone git@github.com:upside-services/$1.git
 cd $1
-git checkout $2
+
+if git rev-parse $2 >/dev/null 2>&1
+then
+    echo "Using tag: $2"
+else
+    echo "Unable to find tag: $2"
+    exit 1
+fi
+git checkout $2 && \
 ./gradlew clean buildRpm -Prelease.useLastTag=true &&\
 sudo aminate -B  ami-a9a8dfbe *-server/build/distributions/*.rpm --vm-type hvm --partition 1
+
 popd
