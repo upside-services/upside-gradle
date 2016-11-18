@@ -33,13 +33,15 @@ allprojects {
                 entry('metrics-core')
             }
             dependencySet(group:'io.dropwizard', version: '0.9.2') {
-                entry('dropwizard-jdbi')
-                entry('dropwizard-core')
-                entry('dropwizard-client')
-                entry('dropwizard-testing')
-                entry('dropwizard-logging')
-                entry('dropwizard-configuration')
                 entry('dropwizard-auth')
+
+                entry('dropwizard-client')
+                entry('dropwizard-configuration')
+                entry('dropwizard-core')
+                entry('dropwizard-jdbi')
+                entry('dropwizard-logging')
+                entry('dropwizard-testing')
+
             }
 
             dependency 'javax.validation:validation-api:1.1.0.Final'
