@@ -1,9 +1,6 @@
-buildscript {
-    repositories { jcenter() }
-
-    dependencies {
-        classpath 'com.netflix.nebula:gradle-aggregate-javadocs-plugin:2.2.+'
-    }
+task allJavadoc(type: Javadoc) {
+    source exportedProjects.collect { project(it).sourceSets.main.allJava }
+    classpath = files(exportedProjects.collect { project(it).sourceSets.main.compileClasspath })
+    destinationDir = file("${buildDir}/docs/javadoc")
 }
 
-apply plugin: 'nebula-aggregate-javadocs'
