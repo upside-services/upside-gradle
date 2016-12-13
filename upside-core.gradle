@@ -26,11 +26,18 @@ allprojects {
                 username = maven_user
                 password = maven_user_api_key
             }
-            url 'https://upside.artifactoryonline.com/upside/repo/'
+            url 'https://upside.artifactoryonline.com/upside/libs-snapshot/'
+        }
+        maven {
+            credentials {
+                username = maven_user
+                password = maven_user_api_key
+            }
+            url 'https://upside.artifactoryonline.com/upside/libs-release/'
         }
         mavenLocal()
     }
-
+    
     publishing {
         repositories {
             maven {
