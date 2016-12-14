@@ -46,14 +46,5 @@ allprojects {
             }
         }
     }
-
-
-    apply plugin: 'idea'
-    idea {
-        module {
-            downloadJavadoc = true // defaults to false
-            downloadSources = true
-        }
-    }
 }
 
