@@ -6,6 +6,7 @@ buildscript {
     }
 }
 
+apply plugin: "idea"
 
 allprojects {
     def maven_user = System.getenv('UPSIDE_MAVEN_USER')
@@ -44,6 +45,13 @@ allprojects {
                     url 'https://upside.artifactoryonline.com/upside/libs-release-local/'
                 }
             }
+        }
+    }
+
+    idea {
+        module {
+            downloadJavadoc = true // defaults to false
+            downloadSources = true
         }
     }
 }
