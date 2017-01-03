@@ -27,7 +27,7 @@ allprojects {
                 username = maven_user
                 password = maven_user_api_key
             }
-            url 'https://upside.artifactoryonline.com/upside/repo/'
+            url 'https://upside.jfrog.io/upside/repo/'
         }
         mavenLocal()
     }
@@ -40,9 +40,9 @@ allprojects {
                     password = maven_user_api_key
                 }
                 if(project.version.toString().contains('SNAPSHOT')) {
-                    url 'https://upside.artifactoryonline.com/upside/libs-snapshot-local/'
+                    url 'https://upside.jfrog.io/upside/libs-snapshot-local/'
                 } else {
-                    url 'https://upside.artifactoryonline.com/upside/libs-release-local/'
+                    url 'https://upside.jfrog.io/upside/libs-release-local/'
                 }
             }
         }
