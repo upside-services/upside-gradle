@@ -31,7 +31,7 @@ allprojects {
         }
         mavenLocal()
     }
-
+    
     publishing {
         repositories {
             maven {
