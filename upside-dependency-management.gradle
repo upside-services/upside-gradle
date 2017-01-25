@@ -13,7 +13,7 @@ allprojects {
     dependencyManagement {
         dependencies {
             /*Upside*/
-            dependencySet( group: 'com.upside.libs', version: '0.1.0') {
+            dependencySet( group: 'com.upside.libs', version: '0.1.1') {
                 entry('lib-test')
                 entry('lib-s3')
                 entry('lib-sns')
