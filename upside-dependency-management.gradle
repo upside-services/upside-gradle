@@ -20,7 +20,7 @@ allprojects {
                 entry('lib-elasticache')
                 entry('lib-dynamo')
             }
-            dependency 'com.upside.libs:lib-rest:0.0.5'
+            dependency 'com.upside.libs:lib-rest:0.0.8'
 
             dependencySet(group: 'com.upside.model', version:'1.4.0') {
                 entry('model-core')
