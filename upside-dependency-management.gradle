@@ -20,7 +20,7 @@ allprojects {
                 entry('lib-elasticache')
                 entry('lib-dynamo')
             }
-            dependency 'com.upside.libs:lib-rest:0.8.0'
+            dependency 'com.upside.libs:lib-rest:0.9.0'
 
             dependencySet(group: 'com.upside.model', version:'1.4.0') {
                 entry('model-core')
@@ -48,7 +48,8 @@ allprojects {
             dependency 'javax.validation:validation-api:1.1.0.Final'
             dependency 'javax.inject:javax.inject:1'
 
-
+            dependency 'ru.vyarus:dropwizard-guicey:4.0.1'
+            /* Remove this hubspot dependency when everything is over to dropwizard-guicey */
             dependency('com.hubspot.dropwizard:dropwizard-guice:1.0.0.2') {
                 exclude group: 'io.dropwizard'
             }
