@@ -22,7 +22,7 @@ allprojects {
             }
             dependency 'com.upside.libs:lib-rest:0.9.0'
 
-            dependencySet(group: 'com.upside.model', version:'1.5.0') {
+            dependencySet(group: 'com.upside.model', version:'1.6.0') {
                 entry('model-core')
                 entry('model-jdbi')
             }
