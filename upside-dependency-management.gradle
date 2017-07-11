@@ -49,10 +49,6 @@ allprojects {
             dependency 'javax.inject:javax.inject:1'
 
             dependency 'ru.vyarus:dropwizard-guicey:4.0.1'
-            /* Remove this hubspot dependency when everything is over to dropwizard-guicey */
-            dependency('com.hubspot.dropwizard:dropwizard-guice:1.0.0.2') {
-                exclude group: 'io.dropwizard'
-            }
 
             dependency 'com.washingtonpost.dropwizard:dropwizard-peer-authenticator:3.0.1'
             dependency 'com.washingtonpost.dropwizard:dropwizard-json-exceptions:2.0.0'
