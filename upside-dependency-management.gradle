@@ -81,11 +81,17 @@ allprojects {
                 entry('aws-java-sdk-dynamodb')
             }
 
+            /* Manually set 2017/08/02 because of a Whitesource warning about our 'natural' transitive dependency */
+            dependency 'ch.qos.logback:logback-classic:1.2.3'
+
             dependencySet(group:'ch.qos.logback.contrib', version: '0.1.2') {
                 entry('logback-json-classic')
                 entry('logback-json-core')
                 entry('logback-jackson')
             }
+
+            /* Manually set 2017/08/02 because of a Whitesource warning about our 'natural' v3.4 transitive dependency */
+            dependency 'org.apache.commons:commons-lang3:3.6'
 
             /*Redis*/
             dependency 'com.github.spullara.mustache.java:compiler:0.9.1'
@@ -110,7 +116,7 @@ allprojects {
             dependency 'org.zalando:jackson-datatype-money:0.6.0'
 
             /*MySQL*/
-            dependency 'mysql:mysql-connector-java:5.1.38'
+            dependency 'mysql:mysql-connector-java:5.1.43'
             dependency 'org.flywaydb:flyway-core:3.2.1'
             dependency 'org.jdbi:jdbi:2.73'
             dependency 'org.antlr:stringtemplate:3.2.1'

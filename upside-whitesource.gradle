@@ -1,0 +1,16 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'org.whitesource', name: 'whitesource-gradle-plugin', version: '0.8'
+    }
+}
+
+apply plugin: org.whitesource.gradle.WhitesourcePlugin
+
+allprojects {
+    whitesource {
+       orgToken '95f598fa-2a79-425a-b679-63008f05847d'
+    }
+}
