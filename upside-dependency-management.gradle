@@ -93,6 +93,9 @@ allprojects {
             /* Manually set 2017/08/02 because of a Whitesource warning about our 'natural' v3.4 transitive dependency */
             dependency 'org.apache.commons:commons-lang3:3.6'
 
+            /* Manually set 2017/08/03 because of a Whitesource warning about our 'natural' v2.3 transitive dependecny */
+            dependency 'org.apache.commons:commons-pool2:2.4.2'
+
             /*Redis*/
             dependency 'com.github.spullara.mustache.java:compiler:0.9.1'
             dependency 'redis.clients:jedis:2.8.0'
