@@ -99,7 +99,7 @@ allprojects {
             /*Redis*/
             dependency 'com.github.spullara.mustache.java:compiler:0.9.1'
             dependency 'redis.clients:jedis:2.9.0'
-            dependency 'com.bendb.dropwizard:dropwizard-redis:1.0.0-2'
+            dependency 'com.bendb.dropwizard:dropwizard-redis:1.1.0-0'
 
             dependency 'javax.ws.rs:javax.ws.rs-api:2.0.1'
 
