@@ -20,7 +20,7 @@ allprojects {
                 entry('lib-dynamo')
             }
             dependency 'com.upside.libs:lib-rest:0.10.0'
-            dependency 'com.upside.libs:lib-test:0.1.0'            
+            dependency 'com.upside.libs:lib-test:1.0.0'            
 
             dependencySet(group: 'com.upside.model', version:'1.9.0') {
                 entry('model-core')
