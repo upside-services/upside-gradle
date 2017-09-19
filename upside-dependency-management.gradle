@@ -13,14 +13,14 @@ allprojects {
     dependencyManagement {
         dependencies {
             /*Upside*/
-            dependencySet( group: 'com.upside.libs', version: '0.7.0') {
-                entry('lib-test')
+            dependencySet( group: 'com.upside.libs', version: '0.8.0') {
                 entry('lib-s3')
                 entry('lib-sns')
                 entry('lib-elasticache')
                 entry('lib-dynamo')
             }
             dependency 'com.upside.libs:lib-rest:0.10.0'
+            dependency 'com.upside.libs:lib-test:0.1.0'            
 
             dependencySet(group: 'com.upside.model', version:'1.9.0') {
                 entry('model-core')
