@@ -1,4 +1,7 @@
 #!/bin/bash
+# !!!!!!
+#  NOTE - replace <get from eng> before using this as a template for a bakery script
+# !!!!!!
 
 pushd .
 git clone clone git@github.com:upside-services/$1.git
