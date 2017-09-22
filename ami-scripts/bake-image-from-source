@@ -16,3 +16,5 @@ git checkout $2 && \
 sudo aminate -B  ami-a9a8dfbe *-server/build/distributions/*.rpm --vm-type hvm --partition 1
 
 popd
+curl -X POST --data-urlencode 'payload={"text":"Bakery server done with '"$1"'.  Check https://goo.gl/HYC9Vx for success."}' https://hooks.slack.com/services/<get from eng>
+
