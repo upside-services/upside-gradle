@@ -13,28 +13,28 @@ allprojects {
     dependencyManagement {
         dependencies {
             /*Upside*/
-            dependencySet( group: 'com.upside.libs', version: '0.8.0') {
+            dependencySet( group: 'com.upside.libs', version: '0.9.0') {
                 entry('lib-s3')
                 entry('lib-sns')
                 entry('lib-elasticache')
                 entry('lib-dynamo')
             }
             dependency 'com.upside.libs:lib-rest:0.11.0'
-            dependency 'com.upside.libs:lib-test:1.0.0'
-            dependency 'com.upside.libs:lib-quartz-guice:1.0.0'
+            dependency 'com.upside.libs:lib-test:1.1.0'
+            dependency 'com.upside.libs:lib-quartz-guice:1.1.0'
 
-            dependencySet(group: 'com.upside.model', version:'1.9.0') {
+            dependencySet(group: 'com.upside.model', version:'2.5.0') {
                 entry('model-core')
                 entry('model-jdbi')
             }
 
             /*Dropwizard*/
-            dependencySet( group: 'io.dropwizard.metrics', version:'3.1.2') {
+            dependencySet( group: 'io.dropwizard.metrics', version:'3.2.5') {
                 entry('metrics-healthchecks')
                 entry('metrics-core')
                 entry('metrics-annotation')
             }
-            dependencySet(group:'io.dropwizard', version: '1.0.5') {
+            dependencySet(group:'io.dropwizard', version: '1.2.0') {
                 entry('dropwizard-auth')
                 entry('dropwizard-client')
                 entry('dropwizard-configuration')
@@ -54,24 +54,24 @@ allprojects {
             dependency 'com.washingtonpost.dropwizard:dropwizard-peer-authenticator:3.0.1'
             dependency 'com.washingtonpost.dropwizard:dropwizard-json-exceptions:2.0.0'
 
-            dependencySet(group: 'com.fasterxml.jackson.core', version: '2.8.5') {
+            dependencySet(group: 'com.fasterxml.jackson.core', version: '2.9.1') {
                 entry('jackson-databind')
                 entry('jackson-annotations')
             }
 
-            dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.8.5') {
+            dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.9.1') {
                 entry('jackson-datatype-jdk8')
                 entry('jackson-datatype-joda')
                 entry('jackson-datatype-jsr310')
                 entry('jackson-datatype-guava')
             }
 
-            dependencySet(group: 'com.fasterxml.jackson.module', version: '2.8.5') {
+            dependencySet(group: 'com.fasterxml.jackson.module', version: '2.9.1') {
                 entry('jackson-module-afterburner')
             }
-            dependency 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.5'
-            dependency 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.8.5'            
-            dependency 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.5'
+            dependency 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.1'
+            dependency 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.1'            
+            dependency 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.1'
 
             dependencySet(group:'com.amazonaws', version: '1.11.84') {
                 entry('aws-java-sdk-core')
@@ -100,19 +100,23 @@ allprojects {
             /*Redis*/
             dependency 'com.github.spullara.mustache.java:compiler:0.9.1'
             dependency 'redis.clients:jedis:2.9.0'
-            dependency 'com.bendb.dropwizard:dropwizard-redis:1.1.0-0'
+
+            /* See UP-1724 */
+            /* dependency 'com.bendb.dropwizard:dropwizard-redis:1.1.0-0' */
+            dependency 'com.upside.dropwizard:dropwizard-redis:1.2.0.upside'
 
             dependency 'javax.ws.rs:javax.ws.rs-api:2.0.1'
 
-            dependency 'com.google.code.findbugs:annotations:3.0.0'
+            dependency 'com.google.code.findbugs:jsr305:3.0.2'
+            dependency 'com.google.code.findbugs:annotations:3.0.1u2'
 
-            dependency 'com.google.guava:guava:20.0'
+            dependency 'com.google.guava:guava:23.1-jre'
 
             /*DI*/
-            dependency 'com.google.inject:guice:4.0'
+            dependency 'com.google.inject:guice:4.1.0'
 
             /*SLFJ*/
-            dependency 'org.slf4j:slf4j-api:1.7.13'
+            dependency 'org.slf4j:slf4j-api:1.7.25'
 
             /*Currency*/
             dependency 'javax.money:money-api:1.0'
