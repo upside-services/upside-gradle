@@ -19,7 +19,7 @@ allprojects {
                 entry('lib-elasticache')
                 entry('lib-dynamo')
             }
-            dependency 'com.upside.libs:lib-rest:0.11.0'
+            dependency 'com.upside.libs:lib-rest:0.12.0'
             dependency 'com.upside.libs:lib-test:1.1.0'
             dependency 'com.upside.libs:lib-quartz-guice:1.1.0'
 
