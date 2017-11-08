@@ -4,7 +4,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.netflix.nebula:gradle-ospackage-plugin:4.0.0'
-        classpath 'ca.cutterslade.gradle:gradle-dependency-analyze:1.0.3'
     }
 }
 
