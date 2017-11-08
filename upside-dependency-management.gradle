@@ -49,7 +49,7 @@ allprojects {
             dependency 'javax.validation:validation-api:1.1.0.Final'
             dependency 'javax.inject:javax.inject:1'
 
-            dependency 'ru.vyarus:dropwizard-guicey:4.0.1'
+            dependency 'ru.vyarus:dropwizard-guicey:4.1.0'
 
             dependency 'com.washingtonpost.dropwizard:dropwizard-peer-authenticator:3.0.1'
             dependency 'com.washingtonpost.dropwizard:dropwizard-json-exceptions:2.0.0'
