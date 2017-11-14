@@ -125,7 +125,7 @@ allprojects {
 
             /*MySQL*/
             dependency 'mysql:mysql-connector-java:5.1.43'
-            dependency 'org.flywaydb:flyway-core:3.2.1'
+            dependency 'org.flywaydb:flyway-core:4.2.0'
             dependency 'org.jdbi:jdbi:2.78'
             dependency 'org.antlr:stringtemplate:3.2.1'
  
