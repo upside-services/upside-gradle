@@ -112,7 +112,7 @@ allprojects {
             dependency 'com.google.guava:guava:23.4-jre'
 
             /*DI*/
-            dependency 'com.google.inject:guice:4.1.0'
+            dependency 'com.google.inject:guice:4.2.0'
 
             /*SLFJ*/
             dependency 'org.slf4j:slf4j-api:1.7.25'
