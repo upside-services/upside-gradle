@@ -24,7 +24,7 @@ allprojects {
             dependency 'com.upside.libs:lib-quartz-guice:1.3.0'
             dependency 'com.upside.libs:lib-metrics-cloudwatch:1.0.0'            
 
-            dependencySet(group: 'com.upside.model', version:'2.16.0') {
+            dependencySet(group: 'com.upside.model', version:'2.17.0') {
                 entry('model-core')
                 entry('model-jdbi')
             }
