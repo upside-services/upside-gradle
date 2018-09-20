@@ -1,3 +1,0 @@
-apply from: 'https://raw.githubusercontent.com/upside-services/upside-gradle/master/upside-core.gradle'
-apply plugin: 'java'
-
