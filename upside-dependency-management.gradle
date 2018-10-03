@@ -30,12 +30,12 @@ allprojects {
             }
 
             /*Dropwizard*/
-            dependencySet( group: 'io.dropwizard.metrics', version:'3.2.5') {
+            dependencySet( group: 'io.dropwizard.metrics', version:'4.1.0-rc2') {
                 entry('metrics-healthchecks')
                 entry('metrics-core')
                 entry('metrics-annotation')
             }
-            dependencySet(group:'io.dropwizard', version: '1.2.0') {
+            dependencySet(group:'io.dropwizard', version: '1.3.5') {
                 entry('dropwizard-auth')
                 entry('dropwizard-client')
                 entry('dropwizard-configuration')
