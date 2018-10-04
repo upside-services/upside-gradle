@@ -41,8 +41,8 @@ allprojects {
                 entry('dropwizard-configuration')
                 entry('dropwizard-core')
                 entry('dropwizard-db')
-                entry('dropwizard-jdbi')
-                entry('dropwizard-jdbi3')
+                /*entry('dropwizard-jdbi')     NOT SURE WE WANT BOTH JDBI and JDBI3 in the same classpath */
+                entry('dropwizard-jdbi3') 
                 entry('dropwizard-logging')
                 entry('dropwizard-testing')
 
