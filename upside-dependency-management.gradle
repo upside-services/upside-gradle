@@ -75,7 +75,7 @@ allprojects {
             dependency 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.6'            
             dependency 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.6'
 
-            dependencySet(group:'com.amazonaws', version: '1.11.271') {
+            dependencySet(group:'com.amazonaws', version: '1.11.422') {
                 entry('aws-java-sdk-core')
                 entry('aws-java-sdk-cloudwatch')
                 entry('aws-java-sdk-cognitoidentity')
