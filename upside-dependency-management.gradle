@@ -99,6 +99,9 @@ allprojects {
 
             /* Manually set 2017/08/03 because of a Whitesource warning about our 'natural' v2.3 transitive dependecny */
             dependency 'org.apache.commons:commons-pool2:2.4.2'
+            
+            /* Manually set 2018/10/10 because of a Whitesource security warning about our natural 1.10 transitive dependency */
+            dependency 'commons-codec:commons-codec:1.11'
 
             /*Redis*/
             dependency 'com.github.spullara.mustache.java:compiler:0.9.1'
