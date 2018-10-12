@@ -13,18 +13,18 @@ allprojects {
     dependencyManagement {
         dependencies {
             /*Upside*/
-            dependencySet( group: 'com.upside.libs', version: '1.7.0') {
+            dependencySet( group: 'com.upside.libs', version: '1.8.0') {
                 entry('lib-s3')
                 entry('lib-sns')
                 entry('lib-elasticache')
                 entry('lib-dynamo')
             }
-            dependency 'com.upside.libs:lib-rest:0.22.0'
+            dependency 'com.upside.libs:lib-rest:0.23.0'
             dependency 'com.upside.libs:lib-test:1.11.1'
             dependency 'com.upside.libs:lib-quartz-guice:1.4.0'
             dependency 'com.upside.libs:lib-metrics-cloudwatch:1.0.0'            
 
-            dependencySet(group: 'com.upside.model', version:'2.20.0') {
+            dependencySet(group: 'com.upside.model', version:'2.21.0') {
                 entry('model-core')
                 entry('model-jdbi')
             }
