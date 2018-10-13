@@ -18,8 +18,8 @@ service_environment=$service_base_path/environment
 newrelic_yaml=$service_base_path/newrelic.yml
 if [ -e $newrelic_yaml ]
 then
-  cp $newrelic_yaml /etc/upside/newrelic/$newrelic_yaml
-  chown -R upsideservice:upsideservice /etc/upside/newrelic/$newrelic_yaml
+  cp $newrelic_yaml /opt/newrelic/newrelic.yml
+  chown -R upsideservice:upsideservice /opt/newrelic/newrelic.yml
 fi
 
 if [ -e $service_environment ]
@@ -27,4 +27,3 @@ then
   source $service_environment
 fi
 exec /opt/$service_name/bin/$service_name server $service_base_path/app.yml
-
