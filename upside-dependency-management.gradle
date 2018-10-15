@@ -125,7 +125,7 @@ allprojects {
             /*Currency*/
             dependency 'javax.money:money-api:1.0'
             dependency 'org.javamoney:moneta:1.3'
-            dependency 'org.zalando:jackson-datatype-money:1.1.0'
+            dependency 'org.zalando:jackson-datatype-money:0.6.0'
 
             /*MySQL*/
             dependency 'mysql:mysql-connector-java:5.1.43'
