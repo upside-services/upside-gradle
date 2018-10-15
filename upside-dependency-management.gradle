@@ -20,8 +20,8 @@ allprojects {
                 entry('lib-dynamo')
             }
             dependency 'com.upside.libs:lib-rest:0.24.0'
-            dependency 'com.upside.libs:lib-security:0.5.0-SNAPSHOT'
-            dependency 'com.upside.libs:lib-test:1.12.0-SNAPSHOT'
+            dependency 'com.upside.libs:lib-security:0.6.0'
+            dependency 'com.upside.libs:lib-test:1.12.1'
             dependency 'com.upside.libs:lib-quartz-guice:1.4.0'
             dependency 'com.upside.libs:lib-metrics-cloudwatch:1.0.0'            
 
