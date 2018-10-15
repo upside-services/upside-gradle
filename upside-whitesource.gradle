@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'org.whitesource', name: 'whitesource-gradle-plugin', version: '0.8'
+        classpath group: 'org.whitesource', name: 'whitesource-gradle-plugin', version: '18.8.1'
     }
 }
 
