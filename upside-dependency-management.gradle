@@ -13,7 +13,7 @@ allprojects {
     dependencyManagement {
         dependencies {
             /*Upside*/
-            dependencySet( group: 'com.upside.libs', version: '1.8.0') {
+            dependencySet( group: 'com.upside.libs', version: '1.8.1') {
                 entry('lib-s3')
                 entry('lib-sns')
                 entry('lib-elasticache')
