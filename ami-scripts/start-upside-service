@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 base_file=/etc/upside/service/base
 while [ ! -e "$base_file" ]
@@ -11,9 +11,19 @@ service_name=$1
 service_version=$2
 service_base_path=/etc/upside/service/$service_name/$UPSIDE_TIER/$service_version
 service_environment=$service_base_path/environment
+
+# If our service has a newrelic.yml dropped in its service-config, copy it
+# overtop of the default yml in the newrelic home (newrelic searches for the yml
+# in the same place as the JAR exists)
+newrelic_yaml=$service_base_path/newrelic.yml
+if [ -e $newrelic_yaml ]
+then
+  cp $newrelic_yaml /opt/newrelic/newrelic.yml
+  chown -R upsideservice:upsideservice /opt/newrelic/newrelic.yml
+fi
+
 if [ -e $service_environment ]
 then
   source $service_environment
 fi
 exec /opt/$service_name/bin/$service_name server $service_base_path/app.yml
-
