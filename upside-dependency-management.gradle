@@ -148,6 +148,7 @@ allprojects {
             dependency 'com.github.kstyrc:embedded-redis:0.6'
             dependency 'com.upside.test.mysql:mysql-rule:0.4.0'
             dependency 'org.skyscreamer:jsonassert:1.5.0'
+            dependency 'org.slf4j:slf4j-simple:1.7.25'
         }
     }
 }
