@@ -114,7 +114,7 @@ allprojects {
             dependency 'com.google.code.findbugs:jsr305:3.0.2'
             dependency 'com.google.code.findbugs:annotations:3.0.1u2'
 
-            dependency 'com.google.guava:guava:27.0-jre'
+            dependency 'com.google.guava:guava:27.0.1-jre'
 
             /*DI*/
             dependency 'com.google.inject:guice:4.2.0'
