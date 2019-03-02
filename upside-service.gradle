@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.netflix.nebula:gradle-ospackage-plugin:4.0.0'
+        classpath 'com.netflix.nebula:gradle-ospackage-plugin:6.0.0'
     }
 }
 
