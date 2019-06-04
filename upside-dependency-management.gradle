@@ -22,7 +22,7 @@ allprojects {
             dependency 'com.upside.libs:lib-rest:0.28.0'
             dependency 'com.upside.libs:lib-security:0.7.0'
             /* I would LIKE for this to be 1.16.0 but there is something going wrong with the release a.t.m. */
-            dependency 'com.upside.libs:lib-test:1.15.0'
+            dependency 'com.upside.libs:lib-test:1.13.0'
             dependency 'com.upside.libs:lib-quartz-guice:1.6.0'
             dependency 'com.upside.libs:lib-metrics-cloudwatch:1.0.0'            
 
